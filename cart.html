@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier - Snatched</title>
+    <link rel="stylesheet" href="style.css"> <!-- Styles globaux -->
+    <link rel="stylesheet" href="cart.css"> <!-- Styles spécifiques au panier -->
+    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- script.js doit être chargé en premier -->
+    <script src="cart.js"></script> <!-- cart.js doit être chargé après script.js -->
+
+
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <p>VITE ! Profitez de 20% de réduction pour les nouveaux clients !</p>
+    </div>
+
+    <!-- Barre de navigation -->
+    <nav>
+        <a href="index.html">
+            <img src="logo arrière plan transparent[1].png" alt="Snatched Logo" class="logo">
+        </a>
+        <div class="onglets">
+            <a href="index.html">Nos Produits</a>
+            <form>
+                <input type="search" placeholder="Rechercher...">
+            </form>
+            <a href="contact.html">Contactez-nous</a>
+            <a href="login.html">Se connecter</a>
+            <a href="cart.html" class="cart-link">🛒 Panier (0)</a> <!-- Lien vers le panier ajouté -->
+        </div>
+    </nav>
+
+    <!-- Section Panier -->
+    <section class="cart-section">
+        <h1>Votre Panier</h1>
+        <div id="cart-container" class="cart-container">
+            <!-- Les articles du panier seront insérés ici par JavaScript -->
+        </div>
+        <div class="cart-total">
+            Total : <span id="cart-total">0 €</span>
+        </div>
+        <button class="checkout-btn" onclick="redirectToCheckout()">Passer à la caisse</button>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <p>📧 Contactez-nous | 🐈 Suivez-nous</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

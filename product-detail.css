@@ -1,0 +1,150 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+}
+
+.product-detail-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.product-image-gallery {
+  max-width: 50%;
+  text-align: center;
+}
+
+.product-image-gallery .main-image {
+  width: 80%;
+  height: auto;
+  border: 1px solid #ddd;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail-gallery img {
+  width: 60px;
+  height: auto;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.selected {
+  border: 2px solid #FFA500;
+}
+
+.product-info {
+  max-width: 40%;
+}
+
+.product-info h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  font-size: 18px;
+  color: #555;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.color.white {
+  background-color: #ffffff;
+}
+
+.color.black {
+  background-color: #000000;
+}
+
+.color.yellow {
+  background-color: #FFA500;
+}
+
+.color.selected {
+  border: 2px solid #000;
+}
+
+.size-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.size {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.size:hover {
+  background-color: #f0f0f0;
+}
+
+.size.selected-size {
+  background-color: #28a745;
+  color: white;
+  border-color: #218838;
+}
+
+.add-to-cart-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-media p {
+  font-size: 18px;
+  cursor: pointer;
+}

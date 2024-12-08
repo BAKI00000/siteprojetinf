@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement - Snatched</title>
+  <link rel="stylesheet" href="style.css"> <!-- Styles globaux -->
+  <link rel="stylesheet" href="checkout.css"> <!-- Styles spécifiques au paiement -->
+  <script src="script.js"></script>
+
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <p>VITE ! Profitez de 20% de réduction pour les nouveaux clients !</p>
+  </div>
+
+  <!-- Barre de navigation -->
+  <nav>
+    <a href="index.html">
+      <img src="logo arrière plan transparent[1].png" alt="Snatched Logo" class="logo">
+    </a>
+    <div class="onglets">
+      <a href="index.html">Nos Produits</a>
+      <form>
+        <input type="search" placeholder="Rechercher...">
+      </form>
+      <a href="contact.html">Contactez-nous</a>
+      <a href="login.html">Se connecter</a>
+      <a href="cart.html" class="cart-link">🛒 Panier</a>
+    </div>
+  </nav>
+
+  <!-- Barre de progression -->
+  <div class="progress-bar">
+    <div class="step completed">Panier</div>
+    <div class="step active">Livraison</div>
+    <div class="step">Paiement</div>
+    <div class="step">Confirmation</div>
+  </div>
+
+  <!-- Section de paiement -->
+  <section class="checkout-section">
+    <h1>Paiement</h1>
+    <div class="checkout-container">
+
+      <!-- Informations de livraison -->
+      <div class="shipping-info">
+        <h2>Informations de livraison</h2>
+        <form id="checkout-form">
+          <label for="full-name">Nom complet</label>
+          <input type="text" id="full-name" required>
+
+          <label for="address">Adresse</label>
+          <input type="text" id="address" required>
+
+          <label for="city">Ville</label>
+          <input type="text" id="city" required>
+
+          <label for="postal-code">Code Postal</label>
+          <input type="text" id="postal-code" required>
+
+          <label for="country">Pays</label>
+          <input type="text" id="country" required>
+        </form>
+      </div>
+
+      <!-- Informations de paiement -->
+      <div class="payment-info">
+        <h2>Informations de paiement</h2>
+        <label for="card-number">Numéro de carte</label>
+        <input type="text" id="card-number" required maxlength="19" placeholder="1234 5678 9012 3456">
+
+        <label for="expiry-date">Date d'expiration</label>
+        <input type="text" id="expiry-date" required placeholder="MM/AA">
+
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" required maxlength="3">
+      </div>
+
+      <!-- Résumé de la commande -->
+      <div class="order-summary">
+        <h2>Résumé de la commande</h2>
+        <div id="order-items">
+          <!-- Les articles du panier seront injectés ici par le script checkout.js -->
+        </div>
+        <p class="order-total">Total : <span id="order-total">0 €</span></p>
+        <button class="place-order-btn" onclick="placeOrder()">Valider la commande</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

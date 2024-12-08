@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snatched - Détails du Produit</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <p>Des Soldes de 40% <img src="logo.jpg" alt="Snatched Logo" class="top-logo"></p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">
+      <img src="logo arrière plan transparent[1].png" alt="Snatched Logo" class="logo">
+    </a>
+    <div class="onglets">
+      <a href="index.html">Nos Produits</a>
+      <form action="search.html" method="get"> <!-- Formulaire de recherche -->
+        <input type="search" name="query" placeholder="Rechercher...">
+      </form>
+      <a href="contact.html">Contactez-nous</a>
+      <a href="login.html">Se connecter</a>
+      <a href="cart.html" class="cart-link">🛒 Panier</a> <!-- Lien vers le panier -->
+    </div>
+  </nav>
+
+  <!-- Product Detail Section -->
+  <main class="product-detail-container">
+    <div class="product-image-gallery">
+      <img src="Front (8).png" alt="Sweat Blanc" class="main-image" id="main-image">
+      <div class="thumbnail-gallery">
+        <img src="Back (8).png" alt="Sweat Blanc Dos" onclick="changeImage(this)">
+        <img src="Front (8).png" alt="Sweat Blanc Face" onclick="changeImage(this)">
+      </div>
+    </div>
+    
+    <div class="product-info">
+      <h2>Sweat Blanc</h2>
+      <p>Prix : 25.99 €</p>
+      
+      <h3>Couleur</h3>
+      <div class="color-options">
+        <span class="color yellow"></span> <!-- Couleur jaune -->
+        <span class="color white selected"></span> <!-- Couleur blanche sélectionnée -->
+        <a href="product_black.html"><span class="color black"></span></a> <!-- Couleur noire avec lien vers le pull noir -->
+      </div>
+      
+      <h3>Taille</h3>
+      <div class="size-options" id="size-options">
+        <!-- Tailles avec sélection active -->
+        <span class="size" onclick="selectSize('XS')">XS</span>
+        <span class="size" onclick="selectSize('S')">S</span>
+        <span class="size" onclick="selectSize('M')">M</span>
+        <span class="size" onclick="selectSize('L')">L</span>
+      </div>
+      
+      <h3>Description</h3>
+      <p>Un sweat confortable et stylé, parfait pour une tenue décontractée.</p>
+      
+      <!-- Bouton Ajouter au panier avec vérification de taille -->
+      <button class="add-to-cart-btn" onclick="addToCartWithSize('Sweat Blanc', 25.99, 'Front (8).png')">Ajouter au panier</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Contactez-nous au 06 98 87 82 00</p>
+    <div class="social-media">
+      <p><i class="fab fa-facebook-f"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+      <p><i class="fab fa-instagram"></i></p>
+      <p><i class="fab fa-linkedin-in"></i></p>
+    </div>
+  </footer>
+
+  <!-- Script pour changer l'image principale -->
+  <script>
+    function changeImage(element) {
+      document.getElementById("main-image").src = element.src;
+    }
+
+    // Stocke la taille sélectionnée
+    let selectedSize = null;
+
+    // Fonction pour sélectionner une taille
+    function selectSize(size) {
+      selectedSize = size;
+
+      // Met à jour le visuel pour indiquer la taille sélectionnée
+      document.querySelectorAll('.size').forEach(element => {
+        element.classList.remove('selected-size');
+      });
+      document.querySelector(`.size:nth-child(${['XS', 'S', 'M', 'L'].indexOf(size) + 1})`).classList.add('selected-size');
+    }
+
+    // Vérifie si une taille est sélectionnée avant d'ajouter au panier
+    function addToCartWithSize(itemName, itemPrice, itemImage) {
+      if (!selectedSize) {
+        alert('Veuillez sélectionner une taille avant d\'ajouter au panier.');
+        return;
+      }
+
+      // Ajoute l'article au panier avec la taille
+      addToCart(`${itemName} (Taille: ${selectedSize})`, itemPrice, itemImage);
+    }
+  </script>
+  <!-- Script du panier -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+/* Styles généraux */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Top Bar - Ancien style */
+.top-bar {
+  display: none; /* Masqué en raison de la vidéo */
+}
+
+/* Barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px); /* Flou pour mieux s'intégrer à la vidéo en fond */
+  z-index: 10; /* Assure que la barre de navigation est bien au-dessus */
+}
+
+nav .logo {
+  height: 60px;
+  cursor: pointer;
+}
+
+nav .onglets {
+  display: flex;
+  align-items: center;
+}
+
+nav .onglets a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav .onglets a:hover {
+  color: #FFA500;
+}
+
+nav form {
+  margin-left: 20px;
+  position: relative;
+  z-index: 20;
+}
+
+nav form input[type="search"] {
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+nav form input[type="search"]:focus {
+  border-color: #FFA500;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+/* Section de bienvenue */
+.welcome-section {
+  position: relative;
+  background-image: url('Person 1 Slanted.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: #db7210;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+  overflow: hidden;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.welcome-content h1 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.welcome-content p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffffff;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+}
+
+/* Bouton Nouveauté */
+.nouveaute-button {
+  background-color: #FFA500;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+}
+
+.nouveaute-button:hover {
+  background-color: #e59400;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Section des produits populaires */
+.popular-products {
+  text-align: center;
+  padding: 30px 10%;
+  background-color: #f9f9f9;
+  animation: fadeIn 1.5s ease;
+}
+
+.popular-products h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .btn-view {
+  background-color: #FFA500;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card .btn-view:hover {
+  background-color: #e68a00;
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-media p {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+footer .social-media p:hover {
+  color: #FFA500;
+}
+
+/* Logo dans la barre supérieure */
+.top-logo {
+  height: 60px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Section des détails du produit */
+.product-detail-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.product-image-gallery {
+  max-width: 50%;
+  text-align: center;
+}
+
+.product-image-gallery .main-image {
+  width: 80%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-image-gallery .main-image:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail-gallery img {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.thumbnail-gallery img:hover {
+  border: 2px solid #FFA500;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Informations sur le produit */
+.product-info {
+  max-width: 40%;
+}
+
+.product-info h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.product-info p {
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+/* Options de couleur et de taille */
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.color:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color.selected {
+  border: 2px solid #000;
+}
+
+.size-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.size {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.size:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Bouton Ajouter au panier */
+.add-to-cart-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Style */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+/* Form Styles */
+input, textarea, select, button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Styles pour le conteneur de suggestions de recherche */
+.suggestions {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 20px);
+  max-width: 300px;
+  z-index: 1000;
+  display: none;
+  margin-top: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.suggestions p {
+  padding: 10px;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestions p:hover {
+  background-color: #f0f0f0;
+}
+
+/* Suggestions de recherche */
+.suggestions {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestion-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.suggestion-image:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggestion-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.suggestion-price {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+/* Toast notification style */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cart icon bounce animation */
+.cart-link {
+  transition: transform 0.2s ease;
+}
+
+.cart-link.bounce {
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Menu Burger - Ajouté pour la navigation mobile */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  height: 30px;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Affichage du Menu Mobile */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.nav-mobile a {
+  color: #333;
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-mobile a:hover {
+  color: #FFA500;
+}
+
+/* Affichage du Menu Burger en Mobile */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  nav .onglets {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+}
+
+/* Barre de navigation ajustée */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 20px;
+  }
+
+  nav .onglets {
+    display: none;
+  }
+}
+
+/* Transformation Burger en Croix */
+.burger-menu.open div:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.burger-menu.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open div:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Ajoute une animation de rebond sur les boutons */
+button:hover, .nouveaute-button:hover, .add-to-cart-btn:hover, .btn-view:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:active, .nouveaute-button:active, .add-to-cart-btn:active, .btn-view:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+a:focus, button:focus, input:focus, .btn-view:focus, .add-to-cart-btn:focus {
+  outline: 3px solid #FFA500;
+  outline-offset: 3px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

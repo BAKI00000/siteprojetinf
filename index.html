@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snatched - Accueil</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">
+      <img src="logo arrière plan transparent[1].png" alt="Snatched Logo" class="logo">
+    </a>
+    <div class="onglets">
+      <a href="index.html">Nos Produits</a>
+      <!-- Formulaire de recherche avec suggestions -->
+      <form action="javascript:void(0);" id="search-form">
+        <input type="search" id="search-input" placeholder="Rechercher..." oninput="showSuggestions(this.value)">
+        <div id="suggestions" class="suggestions"></div> <!-- Conteneur de suggestions -->
+      </form>
+      <a href="contact.html">Contactez-nous</a>
+      <a href="login.html">Se connecter</a>
+      <!-- Lien vers le panier -->
+      <a href="cart.html" class="cart-link">
+        🛒 Panier
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Welcome Message and Background Image -->
+  <section class="welcome-section">
+    <div class="welcome-content">
+      <h1>Bienvenue chez Snatched</h1>
+      <p>Découvrez notre univers de style et de confort. Chez nous, chaque pièce est pensée pour vous offrir la meilleure qualité.</p>
+      <button class="nouveaute-button" onclick="window.location.href='nouveautes.html'">Nouveauté</button>
+    </div>
+  </section>
+
+  <!-- Section des produits populaires -->
+  <section class="popular-products">
+    <h2>Produits Populaires</h2>
+    <div class="swiper-container popular-products-swiper">
+      <div class="swiper-wrapper">
+        <!-- Sweat Blanc -->
+        <div class="swiper-slide product-card">
+          <img src="Front (8).png" alt="Sweat Blanc">
+          <h3>Sweat Blanc</h3>
+          <p>25.99 €</p>
+          <button class="btn-view" onclick="window.location.href='product-detail.html'">Voir Plus</button>
+        </div>
+        <!-- Bob Orange -->
+        <div class="swiper-slide product-card">
+          <img src="Frontj.png" alt="Bob Orange">
+          <h3>Bob Orange</h3>
+          <p>19.99 €</p>
+          <button class="btn-view" onclick="window.location.href='bob-orange.html'">Voir Plus</button>
+        </div>
+        <!-- Sweat Noir -->
+        <div class="swiper-slide product-card">
+          <img src="Back (4).png" alt="Sweat Noir">
+          <h3>Sweat Noir</h3>
+          <p>25.99 €</p>
+          <button class="btn-view" onclick="window.location.href='product_black.html'">Voir Plus</button>
+        </div>
+        <!-- Bas Blanc -->
+        <div class="swiper-slide product-card">
+          <img src="Front (1).png" alt="Bas Blanc">
+          <h3>Bas Blanc</h3>
+          <p>9.99 €</p>
+          <button class="btn-view" onclick="window.location.href='bas_blanc.html'">Voir Plus</button>
+        </div>
+        <!-- Bas Noir -->
+        <div class="swiper-slide product-card">
+          <img src="Front (4).png" alt="Bas Noir">
+          <h3>Bas Noir</h3>
+          <p>9.99 €</p>
+          <button class="btn-view" onclick="window.location.href='bas_noir.html'">Voir Plus</button>
+        </div>
+        <!-- Casquette Blanche -->
+        <div class="swiper-slide product-card">
+          <img src="Front (10).png" alt="Casquette Blanche">
+          <h3>Casquette Blanche</h3>
+          <p>15.99 €</p>
+          <button class="btn-view" onclick="window.location.href='casquette_blanche.html'">Voir Plus</button>
+        </div>
+        <!-- Casquette Noire -->
+        <div class="swiper-slide product-card">
+          <img src="Front (11).png" alt="Casquette Noire">
+          <h3>Casquette Noire</h3>
+          <p>15.99 €</p>
+          <button class="btn-view" onclick="window.location.href='casquette_noire.html'">Voir Plus</button>
+        </div>
+        <!-- Chaussettes -->
+        <div class="swiper-slide product-card">
+          <img src="Flat Left Side (2).png" alt="Chaussettes Confort">
+          <h3>Chaussettes Confort</h3>
+          <p>7.99 €</p>
+          <button class="btn-view" onclick="window.location.href='chaussettes.html'">Voir Plus</button>
+        </div>
+      </div>
+
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Contactez-nous au 06 98 87 82 00</p>
+    <div class="social-media">
+      <p><i class="fab fa-facebook-f"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+      <p><i class="fab fa-instagram"></i></p>
+      <p><i class="fab fa-linkedin-in"></i></p>
+    </div>
+  </footer>
+
+  <!-- Script du panier et de la recherche -->
+  <script src="script.js"></script>
+
+  <!-- Swiper JS Initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.popular-products-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>

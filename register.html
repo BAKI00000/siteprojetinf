@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer votre espace Client</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <nav>
+    <a href="index.html">
+      <img src="logo arrière plan transparent[1].png" alt="Logo Snatched" class="logo">
+    </a>
+    <div class="onglets">
+      <a href="index.html">Nos Produits</a>
+      <form>
+        <input type="search" placeholder="Rechercher...">
+      </form>
+      <a href="contact.html">Contactez-nous</a>
+      <a href="login.html">Se connecter</a>
+      <a href="cart.html" class="cart-link">🛒 Panier</a> <!-- Lien vers le panier ajouté -->
+    </div>
+  </nav>
+
+  <!-- Formulaire d'inscription -->
+  <div class="form-container">
+    <h2>Créer votre espace Client</h2>
+    <form>
+      <label for="firstName">Prénom</label>
+      <input type="text" id="firstName" placeholder="Entrez votre prénom">
+      
+      <label for="lastName">Nom</label>
+      <input type="text" id="lastName" placeholder="Entrez votre nom">
+
+      <label for="country">Pays</label>
+      <input type="text" id="country" placeholder="Entrez votre pays">
+
+      <label for="city">Ville</label>
+      <input type="text" id="city" placeholder="Entrez votre ville">
+
+      <label for="address">Complémentaire de l'adresse</label>
+      <input type="text" id="address" placeholder="Complément d'adresse">
+
+      <label for="streetNumber">N° de la Rue</label>
+      <input type="text" id="streetNumber" placeholder="N° de la Rue">
+
+      <label for="email">Adresse Mail</label>
+      <input type="email" id="email" placeholder="Votre adresse email">
+      <span class="error-message">Adresse email invalide</span>
+
+      <label for="postalCode">Code Postal</label>
+      <input type="text" id="postalCode" placeholder="Code Postal">
+
+      <label for="password">Mot de passe</label>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Votre mot de passe">
+        <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
+      </div>
+      <div class="password-strength">Force : Faible</div>
+
+      <button type="submit" class="submit-button">Créer mon compte</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

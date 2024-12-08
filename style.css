@@ -1,0 +1,369 @@
+/* Styles généraux */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Top Bar - Ancien style */
+.top-bar {
+  display: none; /* Masqué en raison de la vidéo */
+}
+
+/* Barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px); /* Flou pour mieux s'intégrer à la vidéo en fond */
+  z-index: 10; /* Assure que la barre de navigation est bien au-dessus */
+}
+
+nav .logo {
+  height: 60px;
+  cursor: pointer;
+}
+
+nav .onglets {
+  display: flex;
+  align-items: center;
+}
+
+nav .onglets a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav .onglets a:hover {
+  color: #FFA500;
+}
+
+nav form {
+  margin-left: 20px;
+  position: relative;
+  z-index: 20;
+}
+
+nav form input[type="search"] {
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+nav form input[type="search"]:focus {
+  border-color: #FFA500;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+/* Section de bienvenue */
+.welcome-section {
+  position: relative;
+  background-image: url('Person 1 Slanted.png');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: #db7210;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+  overflow: hidden;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.welcome-content h1 {
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+
+.welcome-content p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffffff;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+}
+
+/* Bouton Nouveauté */
+.nouveaute-button {
+  background-color: #FFA500;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  margin-top: 20px;
+}
+
+.nouveaute-button:hover {
+  background-color: #e59400;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Section des produits populaires */
+.popular-products {
+  text-align: center;
+  padding: 30px 5%;
+  background-color: #f9f9f9;
+  animation: fadeIn 1.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.popular-products h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.product-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px; /* Réduction de la largeur */
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 90%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .btn-view {
+  background-color: #FFA500;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card .btn-view:hover {
+  background-color: #e68a00;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Swiper Arrows - Ajustement pour descendre les flèches */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FFA500 !important;
+  font-size: 32px !important;
+  transition: color 0.3s ease, transform 0.3s !important;
+  position: absolute !important;
+  bottom: -50px !important; /* Abaisser encore les flèches pour qu'elles soient plus proches des produits */
+  transform: translateY(50%) !important;
+  z-index: 10 !important;
+}
+
+.swiper-button-next {
+  right: 10px !important;
+}
+
+.swiper-button-prev {
+  left: 10px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #e59400 !important;
+  transform: scale(1.1) !important;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-media p {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+footer .social-media p:hover {
+  color: #FFA500;
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cart icon bounce animation */
+.cart-link {
+  transition: transform 0.2s ease;
+}
+
+.cart-link.bounce {
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Suggestions de recherche */
+.suggestions {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestion-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.suggestion-image:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

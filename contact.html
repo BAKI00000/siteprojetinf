@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactez-nous | Snatched</title>
+  <link rel="stylesheet" href="style.css"> <!-- Lien vers les styles globaux -->
+  <link rel="stylesheet" href="contact.css"> <!-- Lien vers le style de la page de contact -->
+</head>
+<body>
+  <!-- Barre supérieure -->
+  <div class="top-bar">
+    <p>Des Soldes de 40% <img src="logo.jpg" alt="Snatched Logo" class="top-logo"></p>
+  </div>
+
+  <!-- Barre de navigation -->
+  <nav>
+    <a href="index.html">
+      <img src="logo arrière plan transparent[1].png" alt="Snatched Logo" class="logo">
+    </a>
+    <div class="onglets">
+      <a href="index.html">Nos Produits</a>
+      <form>
+        <input type="search" placeholder="Rechercher...">
+      </form>
+      <a href="contact.html">Contactez-nous</a>
+      <a href="login.html">Se connecter</a>
+      <a href="cart.html" class="cart-link">🛒 Panier</a> <!-- Lien vers le panier ajouté -->
+    </div>
+  </nav>
+
+  <!-- Conteneur principal pour le formulaire de contact -->
+  <div class="contact-container">
+    <h2>Contactez-nous</h2>
+    <p>Nous serions ravis de recevoir vos commentaires ou questions. Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.</p>
+    
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-button">Envoyer le message</button>
+    </form>
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; Contactez-nous au 06 98 87 82 00</p>
+    <div class="social-media">
+      <p><i class="fab fa-facebook-f"></i></p>
+      <p><i class="fab fa-twitter"></i></p>
+      <p><i class="fab fa-instagram"></i></p>
+      <p><i class="fab fa-linkedin-in"></i></p>
+    </div>
+  </footer>
+</body>
+</html>

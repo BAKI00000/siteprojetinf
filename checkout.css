@@ -1,0 +1,229 @@
+/* Styles généraux */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Section de paiement */
+.checkout-section {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.checkout-section h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.checkout-container {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.checkout-container {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.shipping-info, .payment-info, .order-summary {
+  padding: 20px;
+  background-color: #eaeaea;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #555;
+  transition: color 0.3s;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #fafafa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"],
+input[type="password"] {
+  outline: none;
+  border-color: #FFA500;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
+.order-summary {
+  text-align: left;
+  animation: fadeIn 1.5s ease;
+}
+
+.order-summary p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.order-total {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #333;
+}
+
+.place-order-btn {
+  background-color: #FFA500;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.place-order-btn:hover {
+  background-color: #e68a00;
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Styles pour les boutons et l'interactivité */
+.quantity-btn, .remove-item-btn {
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.quantity-btn:hover, .remove-item-btn:hover {
+  background-color: #bbb;
+  transform: scale(1.1);
+}
+
+/* Styles supplémentaires pour le champ de numéro de carte et date d'expiration */
+#card-number, #expiry-date, #cvv {
+  font-family: monospace;
+  letter-spacing: 1px;
+  transition: box-shadow 0.3s ease;
+}
+
+#card-number, #expiry-date, #cvv:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Barre de progression */
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.progress-bar .step {
+  position: relative;
+  padding: 15px 25px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.5s, transform 0.5s;
+}
+
+.progress-bar .step.completed {
+  background-color: #28a745;
+  color: #fff;
+  transform: scale(1.1);
+  transition: background-color 0.5s, transform 0.5s;
+}
+
+.progress-bar .step.active {
+  background-color: #FFA500;
+  color: #fff;
+  transform: scale(1.1);
+  transition: background-color 0.5s, transform 0.5s;
+}
+
+/* Amélioration des champs d'entrée */
+input:invalid {
+  border-color: #ff0000;
+}
+
+input:invalid:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Effet d'hover pour l'order-summary */
+.order-summary:hover {
+  box-shadow: 0px 6px 20px rgba(255, 165, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Responsivité améliorée */
+@media (max-width: 768px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .shipping-info, .payment-info, .order-summary {
+    margin-bottom: 20px;
+  }
+}
